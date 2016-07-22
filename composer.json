@@ -1,9 +1,9 @@
 {
     "name": "outcomebet/casino25-api-client",
-    "homepage": "https://bitbucket.org/outcomebet/casino25-api-client",
+    "homepage": "https://github.com/OutcomeBet/casino25-api-client",
     "authors": [
         {
-            "name": "outcomebet",
+            "name": "OutcomeBet",
             "email": "contact@outcomebet.biz"
         }
     ],
