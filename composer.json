@@ -15,11 +15,5 @@
         "psr-4": {
             "outcomebet\\casino25\\api\\client\\": "src"
         }
-    },
-    "repositories": [
-        {
-            "url": "https://github.com/Scukerman/JsonRPC.git",
-            "type": "vcs"
-        }
-    ]
+    }
 }
