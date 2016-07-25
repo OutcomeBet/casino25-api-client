@@ -77,6 +77,29 @@ class Client
 	}
 
 	/**
+	 * @param array $player
+	 * @return array
+	 */
+	public function getBalance($player)
+	{
+		Helper::requiredParam($player, 'PlayerId', ParamType::STRING);
+
+		return $this->execute('Balance.Get', $player);
+	}
+
+	/**
+	 * @param array $player
+	 * @return array
+	 */
+	public function changeBalance($player)
+	{
+		Helper::requiredParam($player, 'PlayerId', ParamType::STRING);
+		Helper::requiredParam($player, 'Amount', ParamType::INTEGER);
+
+		return $this->execute('Balance.Change', $player);
+	}
+
+	/**
 	 * Creates a game session
 	 *
 	 * @param array $session
