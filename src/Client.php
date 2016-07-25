@@ -77,6 +77,8 @@ class Client
 	}
 
 	/**
+	 * Returns current player balance
+	 *
 	 * @param array $player
 	 * @return array
 	 */
@@ -88,6 +90,8 @@ class Client
 	}
 
 	/**
+	 * Changes the specified player balance
+	 *
 	 * @param array $player
 	 * @return array
 	 */
