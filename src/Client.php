@@ -61,6 +61,20 @@ class Client
 	}
 
 	/**
+	 * Applies a template to a bank group
+	 *
+	 * @param array $bankGroup
+	 * @return array
+	 */
+	public function applySettingsTemplate($bankGroup)
+	{
+		Helper::requiredParam($bankGroup, 'BankGroupId', ParamType::STRING);
+		Helper::requiredParam($bankGroup, 'SettingsTemplateId', ParamType::STRING);
+
+		return $this->execute('BankGroup.ApplySettingsTemplate', $bankGroup);
+	}
+
+	/**
 	 * Creates a player
 	 *
 	 * @param array $player
