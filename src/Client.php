@@ -137,7 +137,7 @@ class Client
 	/**
 	 * Creates a demo session
 	 *
-	 * @param $demoSession
+	 * @param array $demoSession
 	 * @return array
 	 */
 	public function createDemoSession($demoSession)
@@ -153,7 +153,7 @@ class Client
 	/**
 	 * Closes the specified session
 	 *
-	 * @param $session
+	 * @param array $session
 	 * @return array
 	 */
 	public function closeSession($session)
@@ -166,7 +166,7 @@ class Client
 	/**
 	 * Provides information about specified session
 	 *
-	 * @param $session
+	 * @param array $session
 	 * @return array
 	 */
 	public function getSession($session)
@@ -179,7 +179,7 @@ class Client
 	/**
 	 * Returns a filtered list of sessions
 	 *
-	 * @param $filters
+	 * @param array $filters
 	 * @return array
 	 */
 	public function listSessions($filters)
