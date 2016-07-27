@@ -43,7 +43,7 @@ class Client
 	 */
 	public function listGames()
 	{
-		return $this->getClient()->execute('Game.List', []);
+		return $this->execute('Game.List');
 	}
 
 	/**
