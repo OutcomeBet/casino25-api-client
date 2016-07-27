@@ -5,8 +5,20 @@ use JsonRPC\HttpClient;
 
 class Client
 {
+	/**
+	 * @var \JsonRPC\Client
+	 */
 	private $_client;
 
+	/**
+	 * Client constructor.
+	 *
+	 * Config array:
+	 *  - url              string JSON-RPC 2.0 Server
+	 *  - ssl_verification string Certificate verification of HTTP connection over TLS
+	 *
+	 * @param array $config
+	 */
 	public function __construct($config)
 	{
 		if(!array_key_exists('url', $config)) {
@@ -21,6 +33,9 @@ class Client
 		$this->_client = new \JsonRPC\Client(null, false, $http);
 	}
 
+	/**
+	 * @return \JsonRPC\Client
+	 */
 	private function getClient()
 	{
 		return $this->_client;
@@ -39,6 +54,8 @@ class Client
 	/**
 	 * Returns a list of available games
 	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#gamelist
+	 *
 	 * @return array
 	 */
 	public function listGames()
@@ -48,6 +65,8 @@ class Client
 
 	/**
 	 * Creates a bank group
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bankgroupcreate
 	 *
 	 * @param array $bankGroup
 	 * @return array
@@ -63,6 +82,8 @@ class Client
 	/**
 	 * Applies a template to a bank group
 	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bankgroupapplysettingstemplate
+	 *
 	 * @param array $bankGroup
 	 * @return array
 	 */
@@ -76,6 +97,8 @@ class Client
 
 	/**
 	 * Creates a player
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playercreate
 	 *
 	 * @param array $player
 	 * @return array
@@ -92,6 +115,8 @@ class Client
 	/**
 	 * Returns current player balance
 	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#balanceget
+	 *
 	 * @param array $player
 	 * @return array
 	 */
@@ -103,7 +128,9 @@ class Client
 	}
 
 	/**
-	 * Changes the specified player balance
+	 * Changes a specified player balance
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#balancechange
 	 *
 	 * @param array $player
 	 * @return array
@@ -118,6 +145,8 @@ class Client
 
 	/**
 	 * Creates a game session
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessioncreate
 	 *
 	 * @param array $session
 	 * @return array
@@ -137,6 +166,8 @@ class Client
 	/**
 	 * Creates a demo session
 	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessioncreatedemo
+	 *
 	 * @param array $demoSession
 	 * @return array
 	 */
@@ -151,7 +182,9 @@ class Client
 	}
 
 	/**
-	 * Closes the specified session
+	 * Closes a specified session
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessionclose
 	 *
 	 * @param array $session
 	 * @return array
@@ -166,6 +199,8 @@ class Client
 	/**
 	 * Provides information about specified session
 	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessionget
+	 *
 	 * @param array $session
 	 * @return array
 	 */
@@ -179,10 +214,12 @@ class Client
 	/**
 	 * Returns a filtered list of sessions
 	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessionlist
+	 *
 	 * @param array $filters
 	 * @return array
 	 */
-	public function listSessions($filters)
+	public function listSessions($filters = array())
 	{
 		Helper::optionalParam($filters, 'CreateTimeFrom', ParamType::TIMESTAMP);
 		Helper::optionalParam($filters, 'CreateTimeTo', ParamType::TIMESTAMP);
