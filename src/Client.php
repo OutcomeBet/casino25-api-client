@@ -46,7 +46,7 @@ class Client
 	 * @param array $params
 	 * @return array
 	 */
-	private function execute($method, $params)
+	private function execute($method, $params = array())
 	{
 		return $this->getClient()->execute($method, $params);
 	}
