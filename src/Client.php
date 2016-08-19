@@ -22,12 +22,14 @@ class Client
 	 */
 	public function __construct($config)
 	{
-		if(!array_key_exists('url', $config)) {
+		if(!array_key_exists('url', $config))
+		{
 			throw new Exception("You must specify url for API");
 		}
 		$http = new HttpClient($config['url']);
 
-		if(array_key_exists('ssl_verification', $config) && $config['ssl_verification'] == false) {
+		if(array_key_exists('ssl_verification', $config) && $config['ssl_verification'] == false)
+		{
 			$http->withoutSslVerification();
 		}
 		$http->withSslLocalCert($config['sslKeyPath']);
@@ -156,7 +158,8 @@ class Client
 	{
 		Helper::requiredParam($session, 'PlayerId', ParamType::STRING);
 		Helper::requiredParam($session, 'GameId', ParamType::STRING);
-		Helper::optionalParam($session, 'RestorePolicy', ParamType::STRING, function($params, $key, $type) {
+		Helper::optionalParam($session, 'RestorePolicy', ParamType::STRING, function($params, $key, $type)
+		{
 			Helper::strictValues($params, $key, array('Restore', 'Create', 'Last'));
 		});
 		Helper::optionalParam($session, 'StaticHost', ParamType::STRING);
@@ -226,7 +229,8 @@ class Client
 		Helper::optionalParam($filters, 'CreateTimeTo', ParamType::TIMESTAMP);
 		Helper::optionalParam($filters, 'CloseTimeFrom', ParamType::TIMESTAMP);
 		Helper::optionalParam($filters, 'CloseTimeTo', ParamType::TIMESTAMP);
-		Helper::optionalParam($filters, 'Status', ParamType::STRING, function($params, $key, $type) {
+		Helper::optionalParam($filters, 'Status', ParamType::STRING, function($params, $key, $type)
+		{
 			Helper::strictValues($params, $key, array('Open', 'Closed'));
 		});
 		Helper::optionalParam($filters, 'PlayerIds', ParamType::STRINGS_ARRAY);
