@@ -18,6 +18,7 @@ class Client
 	 *  - ssl_verification boolean Certificate verification of HTTP connection over TLS
 	 *
 	 * @param array $config
+	 * @throws Exception
 	 */
 	public function __construct($config)
 	{
