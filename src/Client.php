@@ -15,7 +15,7 @@ class Client
 	 *
 	 * Config array:
 	 *  - url              string JSON-RPC 2.0 Server
-	 *  - ssl_verification string Certificate verification of HTTP connection over TLS
+	 *  - ssl_verification boolean Certificate verification of HTTP connection over TLS
 	 *
 	 * @param array $config
 	 */
