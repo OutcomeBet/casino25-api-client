@@ -12,9 +12,8 @@ use outcomebet\casino25\api\client\Client;
 require __DIR__.'/vendor/autoload.php';
 
 $client = new Client(array(
-        'url' => 'https://api.gamingsystem.org/',
+        'url' => 'https://api.gamingsystem.org:8443/',
         'sslKeyPath' => __DIR__.'/ssl/apikey.pem',
-        'ssl_verification' => false,
 ));
 
 var_export($client->listGames());
