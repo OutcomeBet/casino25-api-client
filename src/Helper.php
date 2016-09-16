@@ -41,7 +41,7 @@ class Helper
 		}
 	}
 
-	private function checkType($params, $key, $expectedType)
+	private static function checkType($params, $key, $expectedType)
 	{
 		switch($expectedType)
 		{
