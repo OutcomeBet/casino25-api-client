@@ -78,6 +78,7 @@ class Client
 	{
 		Helper::requiredParam($bankGroup, 'Id', ParamType::STRING);
 		Helper::requiredParam($bankGroup, 'Currency', ParamType::STRING);
+		Helper::optionalParam($bankGroup, 'DefaultBankValue', ParamType::INTEGER);
 
 		return $this->execute('BankGroup.Create', $bankGroup);
 	}
