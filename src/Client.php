@@ -193,8 +193,7 @@ class Client
 	{
 		Helper::requiredParam($session, 'PlayerId', ParamType::STRING);
 		Helper::requiredParam($session, 'GameId', ParamType::STRING);
-		Helper::optionalParam($session, 'RestorePolicy', ParamType::STRING, function($params, $key, $type)
-		{
+		Helper::optionalParam($session, 'RestorePolicy', ParamType::STRING, function($params, $key, $type) {
 			Helper::strictValues($params, $key, array('Restore', 'Create', 'Last'));
 		});
 		Helper::optionalParam($session, 'StaticHost', ParamType::STRING);
@@ -264,8 +263,7 @@ class Client
 		Helper::optionalParam($filters, 'CreateTimeTo', ParamType::TIMESTAMP);
 		Helper::optionalParam($filters, 'CloseTimeFrom', ParamType::TIMESTAMP);
 		Helper::optionalParam($filters, 'CloseTimeTo', ParamType::TIMESTAMP);
-		Helper::optionalParam($filters, 'Status', ParamType::STRING, function($params, $key, $type)
-		{
+		Helper::optionalParam($filters, 'Status', ParamType::STRING, function($params, $key, $type) {
 			Helper::strictValues($params, $key, array('Open', 'Closed'));
 		});
 		Helper::optionalParam($filters, 'PlayerIds', ParamType::STRINGS_ARRAY);
