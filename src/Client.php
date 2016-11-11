@@ -84,6 +84,23 @@ class Client
 	}
 
 	/**
+	 * Creates or updates a bank group (aka "upsert").
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bankgroupset
+	 *
+	 * @param array $bankGroup
+	 * @return array
+	 */
+	public function setBankGroup($bankGroup)
+	{
+		Helper::requiredParam($bankGroup, 'Id', ParamType::STRING);
+		Helper::requiredParam($bankGroup, 'Currency', ParamType::STRING);
+		Helper::optionalParam($bankGroup, 'DefaultBankValue', ParamType::INTEGER);
+
+		return $this->execute('BankGroup.Set', $bankGroup);
+	}
+
+	/**
 	 * Applies a template to a bank group
 	 *
 	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bankgroupapplysettingstemplate
@@ -114,6 +131,23 @@ class Client
 		Helper::requiredParam($player, 'BankGroupId', ParamType::STRING);
 
 		return $this->execute('Player.Create', $player);
+	}
+
+	/**
+	 * Creates or updates a player (aka "upsert").
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerset
+	 *
+	 * @param array $player
+	 * @return array
+	 */
+	public function setPlayer($player)
+	{
+		Helper::requiredParam($player, 'Id', ParamType::STRING);
+		Helper::optionalParam($player, 'Nick', ParamType::STRING);
+		Helper::requiredParam($player, 'BankGroupId', ParamType::STRING);
+
+		return $this->execute('Player.Set', $player);
 	}
 
 	/**
