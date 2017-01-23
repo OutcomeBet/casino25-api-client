@@ -34,7 +34,7 @@ class Client
 			$http->withDebug();
 		}
 
-		if(array_key_exists('ssl_verification', $config) && $config['ssl_verification'] == false)
+		if(array_key_exists('ssl_verification', $config) && $config['ssl_verification'] === false)
 		{
 			$http->withoutSslVerification();
 		}
