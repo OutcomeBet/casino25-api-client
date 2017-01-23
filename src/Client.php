@@ -26,12 +26,19 @@ class Client
 		{
 			throw new Exception("You must specify url for API");
 		}
+
 		$http = new HttpClient($config['url']);
+
+		if(array_key_exists('debug', $config) && $config['debug'] === true)
+		{
+			$http->withDebug();
+		}
 
 		if(array_key_exists('ssl_verification', $config) && $config['ssl_verification'] == false)
 		{
 			$http->withoutSslVerification();
 		}
+
 		$http->withSslLocalCert($config['sslKeyPath']);
 		$this->_client = new \JsonRPC\Client(null, false, $http);
 	}
