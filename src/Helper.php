@@ -45,19 +45,25 @@ class Helper
 	{
 		switch($expectedType)
 		{
-			case 'string':
+			case ParamType::STRING:
 				if(!is_string($params[$key]))
 				{
 					throw new Exception("Specified parameter \"".$key."\" must be a string");
 				}
 				break;
 
-			case 'integer':
+			case ParamType::INTEGER:
 				if(!is_int($params[$key]))
 				{
 					throw new Exception("Specified parameter \"".$key."\" must be an integer");
 				}
 				break;
+
+			case ParamType::T_ARRAY:
+				if(!is_array($params[$key]))
+				{
+					throw new Exception("Specified parameter \"".$key."\" must be an array");
+				}
 		}
 	}
 }

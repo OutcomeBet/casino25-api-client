@@ -278,4 +278,106 @@ class Client
 
 		return $this->execute('Session.List', $filters);
 	}
+
+	/**
+	 * Sets up bonus params
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bonusset
+	 *
+	 * @param $bonus
+	 * @return array
+	 * @throws Exception
+	 */
+	public function setBonus($bonus)
+	{
+		Helper::requiredParam($bonus, 'Id', ParamType::STRING);
+		Helper::requiredParam($bonus, 'FsType', ParamType::STRING, function ($params, $key, $type) {
+			Helper::strictValues($params, $key, array('original'));
+		});
+		Helper::requiredParam($bonus, 'CounterType', ParamType::STRING, function ($params, $key, $type) {
+			Helper::strictValues($params, $key, array('shared', 'separate'));
+		});
+
+		return $this->execute('Bonus.Set', $bonus);
+	}
+
+	/**
+	 * Lists defined bonuses
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bonuslist
+	 *
+	 * @return array
+	 */
+	public function listBonuses()
+	{
+		return $this->execute('Bonus.List', array());
+	}
+
+	/**
+	 * Lists bonuses activated for player
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerbonuslist
+	 *
+	 * @param $params
+	 * @return array
+	 * @throws Exception
+	 */
+	public function listPlayerBonuses($params)
+	{
+		Helper::requiredParam($params, 'PlayerId', ParamType::STRING);
+
+		return $this->execute('PlayerBonus.List', $params);
+	}
+
+	/**
+	 * Gets detailed information about bonus state for concrete player
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerbonusget
+	 *
+	 * @param $params
+	 * @return array
+	 * @throws Exception
+	 */
+	public function getPlayerBonus($params)
+	{
+		Helper::requiredParam($params, 'BonusId', ParamType::STRING);
+		Helper::requiredParam($params, 'PlayerId', ParamType::STRING);
+
+		return $this->execute('PlayerBonus.Get', $params);
+	}
+
+	/**
+	 * Activates bonus for a player
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerbonusactivate
+	 *
+	 * @param $params
+	 * @return array
+	 * @throws Exception
+	 */
+	public function activatePlayerBonus($params)
+	{
+		Helper::requiredParam($params, 'BonusId', ParamType::STRING);
+		Helper::requiredParam($params, 'PlayerId', ParamType::STRING);
+
+		return $this->execute('PlayerBonus.Activate', $params);
+	}
+
+	/**
+	 * Changes bonus counters for player, transfers funds from bonus balance to player's balance
+	 *
+	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerbonusexecute
+	 *
+	 * @param $params
+	 * @return array
+	 * @throws Exception
+	 */
+	public function executeOperationsOnPlayerBonus($params)
+	{
+		Helper::requiredParam($params, 'BonusId', ParamType::STRING);
+		Helper::requiredParam($params, 'PlayerId', ParamType::STRING);
+		Helper::requiredParam($params, 'Operations', ParamType::T_ARRAY);
+
+		return $this->execute('PlayerBonus.Execute', $params);
+	}
 }
