@@ -9,7 +9,7 @@ use outcomebet\casino25\api\client\Client;
 require __DIR__.'/vendor/autoload.php';
 
 $client = new Client(array(
-        'url' => 'https://api.casinovegas.org/v1/',
+        'url' => 'https://api.c27.games/v1/',
         'sslKeyPath' => __DIR__.'/ssl/apikey.pem',
 ));
 
