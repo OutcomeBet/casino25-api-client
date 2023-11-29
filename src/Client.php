@@ -291,12 +291,6 @@ class Client
 	public function setBonus($bonus)
 	{
 		Helper::requiredParam($bonus, 'Id', ParamType::STRING);
-		Helper::requiredParam($bonus, 'FsType', ParamType::STRING, function ($params, $key, $type) {
-			Helper::strictValues($params, $key, array('original'));
-		});
-		Helper::requiredParam($bonus, 'CounterType', ParamType::STRING, function ($params, $key, $type) {
-			Helper::strictValues($params, $key, array('shared', 'separate'));
-		});
 
 		return $this->execute('Bonus.Set', $bonus);
 	}
