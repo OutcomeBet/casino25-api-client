@@ -1,12 +1,6 @@
 {
     "name": "outcomebet/casino25-api-client",
     "homepage": "https://github.com/OutcomeBet/casino25-api-client",
-    "authors": [
-        {
-            "name": "OutcomeBet",
-            "email": "contact@outcomebet.biz"
-        }
-    ],
     "require": {
         "php": ">=5.3.0",
         "fguillot/json-rpc": "1.2.5"
