@@ -374,4 +374,20 @@ class Client
 
 		return $this->execute('PlayerBonus.Execute', $params);
 	}
+
+	/**
+	 * Returns token to access Jackpot Stream API.
+	 *
+	 * @param $params
+	 * @return array
+	 * @throws Exception
+	 */
+	public function getJackpotStreamToken($params)
+	{
+		Helper::requiredParam($params, 'BankGroupId', ParamType::STRING);
+		Helper::requiredParam($params, 'Tag', ParamType::STRING);
+		Helper::requiredParam($params, 'ExpiryInSeconds', ParamType::INTEGER);
+
+		return $this->execute('Jackpot.GetStreamToken');
+	}
 }
