@@ -62,9 +62,7 @@ class Client
 	}
 
 	/**
-	 * Returns a list of available games
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#gamelist
+	 * Returns a list of available games.
 	 *
 	 * @return array
 	 */
@@ -74,9 +72,7 @@ class Client
 	}
 
 	/**
-	 * Creates a bank group
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bankgroupcreate
+	 * Creates a bank group.
 	 *
 	 * @param array $bankGroup
 	 * @return array
@@ -93,8 +89,6 @@ class Client
 	/**
 	 * Creates or updates a bank group (aka "upsert").
 	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bankgroupset
-	 *
 	 * @param array $bankGroup
 	 * @return array
 	 */
@@ -108,9 +102,7 @@ class Client
 	}
 
 	/**
-	 * Applies a template to a bank group
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bankgroupapplysettingstemplate
+	 * Applies a template to a bank group.
 	 *
 	 * @param array $bankGroup
 	 * @return array
@@ -124,9 +116,7 @@ class Client
 	}
 
 	/**
-	 * Creates a player
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playercreate
+	 * Creates a player.
 	 *
 	 * @param array $player
 	 * @return array
@@ -143,8 +133,6 @@ class Client
 	/**
 	 * Creates or updates a player (aka "upsert").
 	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerset
-	 *
 	 * @param array $player
 	 * @return array
 	 */
@@ -158,9 +146,7 @@ class Client
 	}
 
 	/**
-	 * Returns current player balance
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#balanceget
+	 * Returns current player balance.
 	 *
 	 * @param array $player
 	 * @return array
@@ -173,9 +159,7 @@ class Client
 	}
 
 	/**
-	 * Changes a specified player balance
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#balancechange
+	 * Changes a specified player balance.
 	 *
 	 * @param array $player
 	 * @return array
@@ -189,9 +173,7 @@ class Client
 	}
 
 	/**
-	 * Creates a game session
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessioncreate
+	 * Creates a game session.
 	 *
 	 * @param array $session
 	 * @return array
@@ -209,9 +191,7 @@ class Client
 	}
 
 	/**
-	 * Creates a demo session
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessioncreatedemo
+	 * Creates a demo session.
 	 *
 	 * @param array $demoSession
 	 * @return array
@@ -227,9 +207,7 @@ class Client
 	}
 
 	/**
-	 * Closes a specified session
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessionclose
+	 * Closes a specified session.
 	 *
 	 * @param array $session
 	 * @return array
@@ -242,9 +220,7 @@ class Client
 	}
 
 	/**
-	 * Provides information about specified session
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessionget
+	 * Provides information about specified session.
 	 *
 	 * @param array $session
 	 * @return array
@@ -257,9 +233,7 @@ class Client
 	}
 
 	/**
-	 * Returns a filtered list of sessions
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#sessionlist
+	 * Returns a filtered list of sessions.
 	 *
 	 * @param array $filters
 	 * @return array
@@ -280,9 +254,7 @@ class Client
 	}
 
 	/**
-	 * Sets up bonus params
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bonusset
+	 * Sets up bonus params.
 	 *
 	 * @param $bonus
 	 * @return array
@@ -296,9 +268,7 @@ class Client
 	}
 
 	/**
-	 * Lists defined bonuses
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#bonuslist
+	 * Lists defined bonuses.
 	 *
 	 * @return array
 	 */
@@ -308,9 +278,7 @@ class Client
 	}
 
 	/**
-	 * Lists bonuses activated for player
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerbonuslist
+	 * Lists bonuses activated for player.
 	 *
 	 * @param $params
 	 * @return array
@@ -324,9 +292,7 @@ class Client
 	}
 
 	/**
-	 * Gets detailed information about bonus state for concrete player
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerbonusget
+	 * Gets detailed information about bonus state for concrete player.
 	 *
 	 * @param $params
 	 * @return array
@@ -341,9 +307,7 @@ class Client
 	}
 
 	/**
-	 * Activates bonus for a player
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerbonusactivate
+	 * Activates bonus for a player.
 	 *
 	 * @param $params
 	 * @return array
@@ -358,9 +322,7 @@ class Client
 	}
 
 	/**
-	 * Changes bonus counters for player, transfers funds from bonus balance to player's balance
-	 *
-	 * @link https://github.com/OutcomeBet/casino25-api-client/wiki/API-Documentation#playerbonusexecute
+	 * Changes bonus counters for player, transfers funds from bonus balance to player's balance.
 	 *
 	 * @param $params
 	 * @return array
