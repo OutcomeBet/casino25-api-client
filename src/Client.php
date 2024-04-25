@@ -350,6 +350,6 @@ class Client
 		Helper::requiredParam($params, 'Tag', ParamType::STRING);
 		Helper::requiredParam($params, 'ExpiryInSeconds', ParamType::INTEGER);
 
-		return $this->execute('Jackpot.GetStreamToken');
+		return $this->execute('Jackpot.GetStreamToken', $params);
 	}
 }
